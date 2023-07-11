@@ -14,7 +14,7 @@ export default siteConfig({
   author: 'yeojin',
 
   // open graph metadata (optional)
-  description: 'yeojin blog - developer blog',
+  description: 'Yeojin blog',
 
   // social usernames (optional)
   // twitter: 'transitive_bs',
