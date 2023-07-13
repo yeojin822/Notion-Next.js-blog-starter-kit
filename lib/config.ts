@@ -58,6 +58,12 @@ export const defaultPageIcon: string | null = getSiteConfig('defaultPageIcon', n
 export const defaultPageCover: string | null = getSiteConfig('defaultPageCover', null);
 export const defaultPageCoverPosition: number = getSiteConfig('defaultPageCoverPosition', 0.5);
 
+// Optional utteranc.es comments via GitHub issue comments
+export const utterancesGitHubRepo: string | null = getSiteConfig(
+  'utterancesGitHubRepo',
+  null
+)
+
 // Optional whether or not to enable support for LQIP preview images
 export const isPreviewImageSupportEnabled: boolean = getSiteConfig(
   'isPreviewImageSupportEnabled',

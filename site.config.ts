@@ -30,6 +30,9 @@ export default siteConfig({
   defaultPageCover: null,
   defaultPageCoverPosition: 0.5,
 
+  // Utteranc.es comments via GitHub issue comments (optional)
+  utterancesGitHubRepo: 'yeojin822/blog-comments',
+
   // whether or not to enable support for LQIP preview images (optional)
   isPreviewImageSupportEnabled: true,
 

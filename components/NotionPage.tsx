@@ -30,6 +30,7 @@ import { Page404 } from './Page404';
 import { PageAside } from './PageAside';
 import { PageHead } from './PageHead';
 import styles from './styles.module.css';
+import { ReactUtterances } from './ReactUtterances'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -220,6 +221,56 @@ export const NotionPage: React.FC<types.PageProps> = ({
   );
 
   const socialDescription = getPageProperty<string>('설명', block, recordMap) || config.description;
+  let comments: React.ReactNode = null
+
+  // only display comments and page actions on blog post pages
+  if (isBlogPost) {
+    if (config.utterancesGitHubRepo) {
+      comments = (
+        <ReactUtterances
+          repo={config.utterancesGitHubRepo}
+          issueMap='issue-term'
+          issueTerm='title'
+          theme={isDarkMode ? 'photon-dark' : 'github-light'}
+        />
+      )
+      // } else if (config.cusdis) {
+      //   if (!config.cusdis.appId) {
+      //     console.warn('[cusdis]', 'appId is required')
+      //   }
+      //   comments = darkMode.value ? (
+      //     <ReactCusdis
+      //       style={{
+      //         width: '100%',
+      //         marginTop: '30px'
+      //       }}
+      //       attrs={{
+      //         host: config.cusdis.host || 'https://cusdis.com',
+      //         appId: config.cusdis.appId,
+      //         pageId: pageId,
+      //         pageTitle: title,
+      //         pageUrl: canonicalPageUrl,
+      //         theme: 'dark'
+      //       }}
+      //     ></ReactCusdis>
+      //   ) : (
+      //     <ReactCusdis
+      //       style={{
+      //         width: '100%',
+      //         marginTop: '30px'
+      //       }}
+      //       attrs={{
+      //         host: config.cusdis.host || 'https://cusdis.com',
+      //         appId: config.cusdis.appId,
+      //         pageId: pageId,
+      //         pageTitle: title,
+      //         pageUrl: canonicalPageUrl,
+      //         theme: 'light'
+      //       }}
+      //     ></ReactCusdis>
+      //   )
+    }
+  }
 
   const isIndexPage = pageId === site.rootNotionPageId;
 
@@ -257,12 +308,12 @@ export const NotionPage: React.FC<types.PageProps> = ({
         mapImageUrl={mapImageUrl}
         searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
-        pageFooter={
-          config.enableComment ? (
-            !isBlogPost ? null : (
-              <Comments pageId={pageId} recordMap={recordMap} />
-            )
-          ) : null
+        pageFooter={comments
+          // config.enableComment ? (
+          //   !isBlogPost ? null : (
+          //     <Comments pageId={pageId} recordMap={recordMap} />
+          //   )
+          // ) : null
         }
         footer={null}
       />
