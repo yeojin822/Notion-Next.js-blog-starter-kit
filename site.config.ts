@@ -57,11 +57,11 @@ export default siteConfig({
   navigationLinks: [
     {
       title: '카테고리',
-      pageId: '9a98c774d024dc9b6e54bea0009d4cd',
+      pageId: '99a98c774d024dc9b6e54bea0009d4cd',
     },
     {
       title: '카테고리',
-      pageId: '9a98c774d024dc9b6e54bea0009d4cd',
+      pageId: '99a98c774d024dc9b6e54bea0009d4cd',
       menuPage: true,
     },
   ],
