@@ -27,5 +27,5 @@ export const PageAside: React.FC<{
 
   return null;
 
-  return <PageSocial />
+  // return <PageSocial />
 };
