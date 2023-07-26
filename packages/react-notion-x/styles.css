@@ -1444,7 +1444,7 @@ svg.notion-page-icon {
 
 .notion-collection-card {
   display: flex;
-  flex-direction: column;
+  /*flex-direction: column;*/
   overflow: hidden;
 
   text-decoration: none;

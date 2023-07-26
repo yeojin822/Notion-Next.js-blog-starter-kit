@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Block, ExtendedRecordMap } from 'notion-types';
 
 import { PageActions } from './PageActions';
-// import { PageSocial } from './PageSocial';
+import { PageSocial } from './PageSocial';
 
 import { getPageTweet } from 'lib/get-page-tweet';
 
@@ -27,5 +27,5 @@ export const PageAside: React.FC<{
 
   return null;
 
-  // return <PageSocial />
+  return <PageSocial />
 };
